@@ -83,7 +83,10 @@
         <td colspan="4" id="nicknameCell" style="text-align: center;">usernickname</td>
       </tr>
       <tr>
-        <td colspan="4" id="mmrCell">티어이미지.jpg 현재 점수: 123454</td>
+        <td colspan="4">
+          <img id="tierImage" alt="티어이미지">
+          <span id="mmrCell"></span>
+        </td>
       </tr>
       <tr >
         <td class="color">총 게임</td>
@@ -122,7 +125,7 @@
         
         // 각 셀에 데이터를 할당
         document.getElementById('nicknameCell').textContent = userStats.nickname;
-        document.getElementById('mmrCell').textContent = `티어이미지.jpg 현재 점수: ${userStats.mmr}`;
+        document.getElementById('mmrCell').textContent = `현재 점수: ${userStats.mmr}`;
         document.getElementById('totalGamesCell').textContent = userStats.totalGames;
         document.getElementById('top1Cell').textContent = Math.round(userStats.top1 * 100) + '%';
         document.getElementById('totalTeamKillsCell').textContent = userStats.totalTeamKills;
@@ -131,6 +134,24 @@
         document.getElementById('top3Cell').textContent = Math.round(userStats.top3 * 100) + '%';
         document.getElementById('averageAssistantsCell').textContent = userStats.averageAssistants;
         document.getElementById('averageRankcell').textContent = userStats.averageRank;
+
+        const tierImage = document.getElementById('tierImage');
+        if(userStats.mmr <= 799) {
+          tierImage.scr = '00.png';
+        } else if (userStats.mmr >= 800 && userStats.mmr <= 1599) {
+          tierImage.scr = 'bronze.png';
+        } else if (userStats.mmr >= 1600 && userStats.mmr <= 2599) {
+          tierImage.scr = 'sliver.png';
+        } else if (userStats.mmr >= 2600 && userStats.mmr <= 3799) {
+          tierImage.scr = 'gold.png';
+        } else if (userStats.mmr >= 3800 && userStats.mmr <= 5199) {
+          tierImage.scr = 'platinum.png';
+        } else if (userStats.mmr >= 5200 && userStats.mmr <= 6799) {
+          tierImage.scr = 'diamond.png';
+        } else {
+          tierImage.scr = 'mithril.phn';
+        }
+        if(user
       } else {
         const newRow = statsTable.insertRow();
         newRow.innerHTML = '<td colspan="4">유저 통계를 불러올 수 없습니다.</td>';
