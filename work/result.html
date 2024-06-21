@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .navbar ul {
+      list-style-type: none;
+      background-color: #213276;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+    .navbar a {
+      color: white;
+      font-family: 'NPSfontBold';
+      text-decoration: none;
+      padding: 15px;
+      display: block;
+      text-align: center;
+    }
+    .navbar li {
+      float: left;
+    }
+    @font-face {
+      font-family: 'NPSfontBold';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    body {
+      background-color: #787881;
+      font-family: 'NPSfontBold';
+      background-image: 'PC_1920 x1080.png';
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+    }
+    h1 {
+      font-family: 'NPSfontBold';
+    }
+    .container {
+      width: 30%;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #213276;
+      color: white;
+    }
+    .color {
+      background-color: #213276;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="20513401.html">Eternal Return</a></li>
+      <li><a href="rank.html">Ranker</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h1>유저 통계</h1>
+    <table id="statsTable">
+      <tr>
+        <th colspan="4" style="text-align: center;">유저 정보</th>
+      </tr>
+      <tr>
+        <td colspan="4" id="nicknameCell" style="text-align: center;">usernickname</td>
+      </tr>
+      <tr>
+        <td colspan="4" id="mmrCell">티어이미지.jpg 현재 점수: 123454</td>
+      </tr>
+      <tr >
+        <td class="color">총 게임</td>
+        <td id="totalGamesCell">17</td>
+        <td class="color">Top 1</td>
+        <td id="top1Cell">123</td>
+      </tr>
+      <tr>
+        <td class="color">평균 TK</td>
+        <td id="totalTeamKillsCell">456</td>
+        <td class="color">Top 2</td>
+        <td id="top2Cell">18</td>
+      </tr>
+      <tr>
+        <td class="color">평균 킬</td>
+        <td id="averageKillsCell">789</td>
+        <td class="color">Top 3</td>
+        <td id="top3Cell">19</td>
+        
+      </tr>
+      <tr>
+        <td class="color">평균 어시스트</td>
+        <td id="averageAssistantsCell">101112</td>
+        <td class="color">평균 순위</td>
+        <td id="averageRankcell">19</td>
+      </tr>
+    </table>
+    
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const statsData = JSON.parse(localStorage.getItem('statsData'));
+
+      if (statsData && statsData.userStats && statsData.userStats.length > 0) {
+        const userStats = statsData.userStats[0];
+        
+        // 각 셀에 데이터를 할당
+        document.getElementById('nicknameCell').textContent = userStats.nickname;
+        document.getElementById('mmrCell').textContent = `티어이미지.jpg 현재 점수: ${userStats.mmr}`;
+        document.getElementById('totalGamesCell').textContent = userStats.totalGames;
+        document.getElementById('top1Cell').textContent = Math.round(userStats.top1 * 100) + '%';
+        document.getElementById('totalTeamKillsCell').textContent = userStats.totalTeamKills;
+        document.getElementById('top2Cell').textContent = Math.round(userStats.top2 * 100) + '%';
+        document.getElementById('averageKillsCell').textContent = userStats.averageKills;
+        document.getElementById('top3Cell').textContent = Math.round(userStats.top3 * 100) + '%';
+        document.getElementById('averageAssistantsCell').textContent = userStats.averageAssistants;
+        document.getElementById('averageRankcell').textContent = userStats.averageRank;
+      } else {
+        const newRow = statsTable.insertRow();
+        newRow.innerHTML = '<td colspan="4">유저 통계를 불러올 수 없습니다.</td>';
+      }
+    });
+  </script>
+</body>
+</html>
