@@ -1,0 +1,191 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container{
+    display: flex;
+    gap: 4px;
+    justify-content: space-between;
+  }
+  .box {
+    position: relative;
+    left: 0px;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: white;
+    transition: 0.01s ease-in-out;
+    flex: 1px;
+    color: white;
+    text-align: left;
+    overflow: hidden;
+  }
+  .box img{
+    display: block;
+  }
+  #box1{
+    background-color: #171c40;
+  }
+  #box2{
+    background-color: #171c40;
+  }
+  #box3{
+    background-color: #171c40;
+  }
+  #box4{
+    background-color: #171c40;
+  }
+  .box:hover {
+    flex: 2;
+    cursor: pointer;
+  }
+  .box:hover .text {
+    visibility: visible;
+}
+
+#box1:hover .text {
+    visibility: visible; 
+
+}
+
+  .navbar ul{
+    list-style-type: none;
+        background-color: #213276;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+  }
+  .navbar a{
+    color: white;
+    font-family: 'NPSfontBold';
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+  }
+  .navbar li{
+    float: left;
+  
+  }
+.wrapper input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+@font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+input[type=text] { 
+    width: 500px; height: 40px; border: 0; border-radius: 5px; 
+}
+body { background-color: 787881;}
+
+p.zero { background-color: #213276;
+	color: white; font-family: 'NPSfontBold';
+	position: fixed; padding:10px; margin: 0%; width:100%; border: 0%;}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper button {
+ 
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  aspect-ratio: 1;
+  position: absolute;
+  right: 37.5%;
+  font-family: 'NPSfontBold';
+
+}
+.wrapper form {
+  display: flex;
+  align-items: center;
+}
+.text {
+  display: block;
+  margin-top: 0;
+  font-family: 'NPSfontBold';
+  font-size: 20px;
+  max-height: 150px;
+  visibility: hidden;
+}
+
+</style> </head>
+<body>
+<nav class="navbar">
+  <ul>
+    <li><a href="20513401.html">Eternal Return</a></li>
+    <li><a href="rank.html">Ranker</a></li>
+  </ul>
+</nav>
+<br><br><br><br><br><br>
+<div class="wrapper">
+<form id="nicknameForm"> 
+<input type="text" id="nicknameInput" name="nickname" placeholder="닉네임 입력" class="center-block">
+<button type="submit" id="submit_button">검색</button>
+</form>
+</div>
+<br><br><br><br><p style="font-family: 'NPSfontBold'; color: white; margin-left: 180px; font-size: 30px;">주요패치</p>
+<div class="container">
+  <div class="box" id="box1" style="margin-left: 170px;"><img src="D:\install_game_otherfile\Half.png" style="width: 230px; height: auto; display: block; float: left; margin-right: 10px; margin-left: 70px;"><div class="text">
+  승률 13.89%<br>평균순위 #4.4<br> 딜량 15794<br><br><br><p style="color: red;">너프</p>활 무기 숙련도 레벨 당 기본 공격 증폭 1.7% → 1.5%<br><br>E스킬 쿨다운 14/13/12/11/10초 → 15/14/13/12/11초 </b></div></div>
+  <div class="box" id="box2" ><img src="D:\install_game_otherfile\Default_Half (1).png" style="width: 230px; height: auto; display: block; float: left; margin-right: 10px; margin-left: 70px;"><div class="text">승률 11.58%<br>평균순위 #4.5<br> 딜량 16685<br><br><br><p style="color: red;">너프</p>돌격 소총 무기 숙련도 레벨 당 스킬 증폭 4.6% → 4.3%</div></div>
+  <div class="box" id="box3" ><img src="D:\install_game_otherfile\Half (1).png" style="width: 230px; height: auto; display: block; float: left; margin-right: 10px; margin-left: 70px;"><div class="text">승률 15.28%<br>평균순위 #4.3<br> 딜량 14601<br><br><br><p style="color: blue;">버프</p>권총 무기 숙련도 레벨 당 스킬 증폭 4.4% → 4.6%<br><br>레벨 당 체력 73 → 76</div></div>
+  <div class="box" id="box4" style="margin-right: 170px;"><img src="D:\install_game_otherfile\Defalut_Half.png" style="width: 230px; height: auto; display: block; float: left; margin-right: 10px; margin-left: 70px;"><div class="text">승률 15.92%<br>평균순위 #4.0<br> 딜량 15333<br><br><p style="color: blue;">버프</p>레벨 당 체력 64 → 68<br><br>E스킬 피해량 40/70/100/130/160(+스킬 증폭의 55%) → 60/90/120/150/180(+스킬 증폭의 55%)</div></div>
+</div>
+
+<div id="result2"><p> </p></div>
+
+</body>
+
+<script>
+  document.getElementById("nicknameForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const nickname = document.getElementById("nicknameInput").value;
+      const nicknameUrl = `https://open-api.bser.io/v1/user/nickname?query=${encodeURIComponent(nickname)}`;
+
+      fetch(nicknameUrl, {
+        method: 'GET',
+        headers: {
+          'accept': 'application/json',
+          'x-api-key': 'UZWY9Lzft15fCmmPb0tEt8GFvJQ533Xg6gc87qNB'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.user && data.user.userNum) {
+          const userId = data.user.userNum;
+          const statsUrl = `https://open-api.bser.io/v1/user/stats/${userId}/25`;
+
+          return fetch(statsUrl, {
+            method: 'GET',
+            headers: {
+              'accept': 'application/json',
+              'x-api-key': 'UZWY9Lzft15fCmmPb0tEt8GFvJQ533Xg6gc87qNB'
+            }
+          });
+        } else {
+          throw new Error('유저 정보를 찾을 수 없습니다.');
+        }
+      })
+      .then(response => response.json())
+      .then(statsData => {
+        console.log(statsData);
+        localStorage.setItem('statsData', JSON.stringify(statsData));
+        window.location.href = "result.html";
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+</script>
+</html>
