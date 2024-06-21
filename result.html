@@ -137,19 +137,19 @@
 
         const tierImage = document.getElementById('tierImage');
         if(userStats.mmr <= 799) {
-          tierImage.scr = '00.png';
+          tierImage.src = '00.png';
         } else if (userStats.mmr >= 800 && userStats.mmr <= 1599) {
-          tierImage.scr = 'bronze.png';
+          tierImage.src = 'bronze.png';
         } else if (userStats.mmr >= 1600 && userStats.mmr <= 2599) {
-          tierImage.scr = 'sliver.png';
+          tierImage.src = 'sliver.png';
         } else if (userStats.mmr >= 2600 && userStats.mmr <= 3799) {
-          tierImage.scr = 'gold.png';
+          tierImage.src = 'gold.png';
         } else if (userStats.mmr >= 3800 && userStats.mmr <= 5199) {
-          tierImage.scr = 'platinum.png';
+          tierImage.src = 'platinum.png';
         } else if (userStats.mmr >= 5200 && userStats.mmr <= 6799) {
-          tierImage.scr = 'diamond.png';
+          tierImage.src = 'diamond.png';
         } else {
-          tierImage.scr = 'mithril.phn';
+          tierImage.src = 'mithril.phn';
         }
        
       } else {
